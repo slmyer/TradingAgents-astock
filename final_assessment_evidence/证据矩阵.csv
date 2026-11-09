@@ -1,0 +1,18 @@
+数据源,数据类型,窗口/首末日,实际交易日数,频率,标的覆盖,关键字段,满足1年,无前视可得性,授权要求,费用,稳定性,公开可复现,接入工作量,相对现有增量,缺失与修订,依赖,文档URL,状态
+东财push2his,个股资金流,2026-05-14~2026-11-09(121日),121,日级,A股个股,主力/超大/大/中/小单净流入,✗ 仅6个月,△ 实时=陈旧未来,无需,免费,有限流(1s),✓ 公开,低(已实现),✗ 与现有同源同限,lmt上限导致仅180天,requests,https://push2his.eastmoney.com/api/qt/stock/fflow/daykline/get,✗ 不足1年
+东财push2,个股资金流分钟,实时,N/A,1分钟,A股个股,分钟级流入/流出,N/A 实时,✓ 仅当前,无需,免费,有限流(1s),✓ 公开,低(已实现),✓ 现有无分钟,实时快照,requests,https://push2.eastmoney.com/api/qt/stock/fflow/kline/get,✓ 可用(实时)
+同花顺fuyao,个股资金流,1年(文档),~250,日级,A股个股,超大/大/中/小单,✓ 1年,?未确认,✗ 不对外,N/A,未知,✗ 不对外,N/A 不可用,N/A,文档声明端内契约,N/A,https://fuyao.aicubes.cn/docs/api-reference/capital-flow/,窗口达标但不对外
+Tushare同花顺,个股资金流,2019-07-26起,~1600+,日级,A股个股,大/中/小单,✓ 多年,✓ 历史数据,需6000积分,付费,高,✓ 文档完整,中(需注册),✓ 多年历史,单次最多6000条,tushare,https://tushare.pro/wctapi/documents/348.md,技术达标但需付费
+问财iwencai,多维查询,?未确认,?未确认,?待查,A股全市场,自然语言查询,?需注册验证,?未确认,需API Key注册,?免费额度待确认,?待验证,△ 需注册,中(需注册),?待验证,?待查,openapi.iwencai.com,https://openapi.iwencai.com,需注册验证
+mootdx,OHLCV K线,多年,?未限制,日/5分/分钟,A股全市场,开高低收/成交量/成交额,✓ 多年,✓ 历史数据,无需,免费,✗ 云VM连接不稳,✓ 公开协议,中(TCP),✓ 备选源,云环境连接超时,pytdx,通达信TCP 7709,有备源可用
+新浪K线,OHLCV K线,多年,?未限制,日/分钟,A股全市场,开高低收/成交量/复权,✓ 多年,✓ 历史数据,无需,免费,高,✓ 公开,低(已实现),✓ 多年可用,极少缺失,requests,http://money.finance.sina.com.cn/quotes_service/api/json_v2.php/CN_MarketData.getKLineData,✓ 可用
+腾讯qt,OHLCV+估值,多年,?未限制,日/分钟,A股全市场,开高低收/PE/PB/市值/前复权,✓ 多年,✓ 历史数据,无需,免费,高,✓ 公开,低(已实现),✓ 多年可用,极少缺失,requests,http://qt.gtimg.cn,✓ 可用
+新浪三表,财务报表,多年(最早2002),多年,季报,A股全市场,资产/利润/现金流三表,✓ 多年,✓ 仓库已截断,无需,免费,高,✓ 公开,低(已实现),✓ 多年历史,逾期披露需法定截止日判断,requests,http://money.finance.sina.com.cn/corp/go.php/vFD_*,✓ 可用
+同花顺EPS,盈利预期,当前快照,0(仅当前),快照,A股个股,一致预期EPS,✗ 仅快照,✗ 仅当前快照无法回看,无需,免费,中,✓ 公开(需JS),中(需JS解析),△ 有增量但仅当前,历史值不可得,requests+JS,http://basic.10jqka.com.cn/api/stock/export.php?type=report_year,可用但仅当前
+东财龙虎榜,交易数据,?待查,?待查,日级,个股上榜日,席位买卖金额,?待查,✓ 历史数据,无需,免费,有限流(1s),✓ 公开,低(已实现),✓ 机构识别,近30日内,requests,https://datacenter-web.eastmoney.com/api/data/v1/get?reportName=RPT_ORGANIZATION_TRADE_DETAILS,✓ 可用(近期)
+东财解禁,股本变动,?待查,?待查,日级,全市场,限售解禁日期/数量,?待查,✓ 历史数据,无需,免费,有限流(1s),✓ 公开,低(已实现),✓ 现有无,未来为主,requests,https://datacenter-web.eastmoney.com/api/data/v1/get?reportName=RPT_LIFT_STAGE,✓ 可用
+交易所官网,两融余额,多年,多年,日级,两融标的,融资/融券余额,✓ 多年,✓ 历史数据,无需,免费,高,✓ 官方,中(需爬取),✓ 多年公开,官方权威无修订,网页解析,http://www.sse.com.cn / http://www.szse.cn,✓ 可用(需实现)
+vibe上交所ETF,ETF份额,历史(按日归档),?未测试1年,日级,上交所ETF,份额/规模,?需测试,✓ T+1公布,无需,免费,高,✓ 官方归档,中(需MCP),?待测试,深交所仅快照,MCP,http://www.sse.com.cn,待测试
+vibe中证/国证,指数成分,快照(最近公布),0(仅快照),快照,主流指数,成分及权重,✗ 无as-of历史,✗ 仅快照,无需,免费,高,✓ 官方,中(需MCP),✗ 无历史,历史值不可回溯,MCP,http://www.csindex.com.cn,可用但无as-of
+东财新闻,新闻文本,?待查,?待查,实时,全市场,标题/正文,N/A,✗ 仅文本无标签,无需,免费,有限流(1s),✓ 公开,低(已实现),✓ 现有无,无结构化利多利空,requests,https://np-anotice-stock.eastmoney.com,✓ 可用(仅文本)
+财联社,全球快讯,?待查,?待查,实时,全市场,快讯文本,N/A,✗ 仅文本,无需,免费,中,✓ 公开,低(已实现),✓ 快讯,无结构化,requests,https://www.cls.cn,✓ 可用(仅文本)
